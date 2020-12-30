@@ -1,0 +1,253 @@
+Numpy_Assignment_2::¶
+Question:1
+Convert a 1D array to a 2D array with 2 rows?
+Desired output::
+array([[0, 1, 2, 3, 4], [5, 6, 7, 8, 9]])
+
+In [1]:
+import numpy as np
+arr1 = np.arange(0,10).reshape(2,5)
+print(arr1)
+Question:2
+How to stack two arrays vertically?
+Desired Output::
+array([[0, 1, 2, 3, 4], [5, 6, 7, 8, 9], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]])
+In [2]:
+arr1 = np.array([[0,1,2,3,4],[5,6,7,8,9]])
+arr2 = np.ones((2,5))
+print(arr1)
+print(arr2)
+print("=========================================================")
+arr3 = np.vstack((arr1,arr2))
+arr3 = arr3.astype('int')
+print(arr3)
+Question:3
+How to stack two arrays horizontally?
+Desired Output::
+array([[0, 1, 2, 3, 4, 1, 1, 1, 1, 1], [5, 6, 7, 8, 9, 1, 1, 1, 1, 1]])
+In [3]:
+arr4 = np.hstack((arr1,arr2))
+arr4 = arr4.astype('int')
+print(arr4)
+[[0 1 2 3 4 1 1 1 1 1]
+ [5 6 7 8 9 1 1 1 1 1]]
+Question:4
+How to convert an array of arrays into a flat 1d array?
+Desired Output::
+array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+In [4]:
+arr1 = np.array([[0,1,2,3,4],[5,6,7,8,9]])
+print(arr1)
+print("========================================")
+arr1 = np.ravel(arr1)
+print(arr1)
+[[0 1 2 3 4]
+ [5 6 7 8 9]]
+========================================
+[0 1 2 3 4 5 6 7 8 9]
+Question:5
+How to Convert higher dimension into one dimension?
+Desired Output::
+array([ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])
+In [5]:
+arr = np.array([[ 0, 1, 2],
+[ 3, 4, 5],
+[ 6, 7, 8],
+[ 9, 10, 11],
+[12, 13, 14]])
+print(arr)
+print("==========================================")
+arr = np.ravel(arr)
+print(arr)
+[[ 0  1  2]
+ [ 3  4  5]
+ [ 6  7  8]
+ [ 9 10 11]
+ [12 13 14]]
+==========================================
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14]
+Question:6
+Convert one dimension to higher dimension?
+Desired Output::
+array([[ 0, 1, 2], [ 3, 4, 5], [ 6, 7, 8], [ 9, 10, 11], [12, 13, 14]])
+In [6]:
+arr = np.array([ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])
+print(arr)
+print("===================================================")
+arr = arr.reshape(5,3)
+print(arr)
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14]
+===================================================
+[[ 0  1  2]
+ [ 3  4  5]
+ [ 6  7  8]
+ [ 9 10 11]
+ [12 13 14]]
+Question:7
+Create 5x5 an array and find the square of an array?
+In [7]:
+arr = np.random.randint(1,25, size = (5,5))
+print(arr)
+print("==================================================")
+arr = np.square(arr)
+print(arr)
+[[ 7 18  8  4 14]
+ [19 19  2 19  6]
+ [18 11 16 22  4]
+ [10 21  2  9  9]
+ [ 8 13 13 11 17]]
+==================================================
+[[ 49 324  64  16 196]
+ [361 361   4 361  36]
+ [324 121 256 484  16]
+ [100 441   4  81  81]
+ [ 64 169 169 121 289]]
+Question:8
+Create 5x6 an array and find the mean?
+In [8]:
+arr5 = np.random.randint(1,20, size = (5,6))
+print("Original Array: \n")
+print (arr5)
+print("\n")
+print("Mean of Array: \n")
+print(arr5.mean())
+Original Array: 
+
+[[10 17  3  1 12 12]
+ [ 9 11  4 16  7  6]
+ [ 6 16 19  8 15 10]
+ [ 9 10  4 16 11 16]
+ [14 13 13 11  8 16]]
+
+
+Mean of Array: 
+
+10.766666666666667
+Question:9
+Find the standard deviation of the previous array in Q8?
+In [9]:
+print("Original Array: \n")
+print (arr5)
+print("\n")
+print("Standard deviation of Array: \n")
+print(np.std(arr5))
+Original Array: 
+
+[[10 17  3  1 12 12]
+ [ 9 11  4 16  7  6]
+ [ 6 16 19  8 15 10]
+ [ 9 10  4 16 11 16]
+ [14 13 13 11  8 16]]
+
+
+Standard deviation of Array: 
+
+4.5290420866031065
+Question:10
+Find the median of the previous array in Q8?
+In [10]:
+print("Original Array: \n")
+print (arr5)
+print("\n")
+print("Median of Array: \n")
+print(np.median(arr5))
+Original Array: 
+
+[[10 17  3  1 12 12]
+ [ 9 11  4 16  7  6]
+ [ 6 16 19  8 15 10]
+ [ 9 10  4 16 11 16]
+ [14 13 13 11  8 16]]
+
+
+Median of Array: 
+
+11.0
+Question:11
+Find the transpose of the previous array in Q8?
+In [11]:
+print("Original Array: \n")
+print (arr5)
+print("\n")
+print("Transpose of Array: \n")
+print(np.transpose(arr5))
+Original Array: 
+
+[[10 17  3  1 12 12]
+ [ 9 11  4 16  7  6]
+ [ 6 16 19  8 15 10]
+ [ 9 10  4 16 11 16]
+ [14 13 13 11  8 16]]
+
+
+Transpose of Array: 
+
+[[10  9  6  9 14]
+ [17 11 16 10 13]
+ [ 3  4 19  4 13]
+ [ 1 16  8 16 11]
+ [12  7 15 11  8]
+ [12  6 10 16 16]]
+Question:12
+Create a 4x4 an array and find the sum of diagonal elements?
+In [12]:
+arr = np.random.randint(1,20, size = (4,4))
+print("Original Array: \n")
+print (arr)
+print("\n")
+print("Sum of diagonal elements of Array: \n")
+print(np.trace(arr))
+Original Array: 
+
+[[16 11 18 12]
+ [11 16 10 16]
+ [ 4  7 10 16]
+ [17 14  7  7]]
+
+
+Sum of diagonal elements of Array: 
+
+49
+Question:13
+Find the determinant of the previous array in Q12?
+In [13]:
+print("Original Array: \n")
+print (arr)
+print("\n")
+print("Determinant of Array: \n")
+print(np.linalg.det(arr))
+Original Array: 
+
+[[16 11 18 12]
+ [11 16 10 16]
+ [ 4  7 10 16]
+ [17 14  7  7]]
+
+
+Determinant of Array: 
+
+6972.000000000001
+Question:14
+Find the 5th and 95th percentile of an array?
+In [14]:
+print("Original Array: \n")
+print (arr)
+print("\n")
+print(f"5th percentile of array: {np.percentile(arr, 5)}")
+print(f"95th percentile of array: {np.percentile(arr, 95)}")
+Original Array: 
+
+[[16 11 18 12]
+ [11 16 10 16]
+ [ 4  7 10 16]
+ [17 14  7  7]]
+
+
+5th percentile of array: 6.25
+95th percentile of array: 17.25
+Question:15
+How to find if a given array has any null values?
+In [15]:
+np.isnan(arr).any()
+Out[15]:
+False
